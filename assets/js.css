@@ -1,109 +1,125 @@
-html, body { margin: 0; padding: 0; }
-body { font-size: 83%; background: #000000; color: #FFFFFF; font-family: Helvetica, Arial, "Trebuchet MS", sans-serif; }
-
+* { margin: 0; padding: 0; border: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+body { font-size: 83%; background: #000; color: #FFF; font-family: "Trebuchet MS", Helvetica, Arial, sans-serif; }
 .hidden { display: none !important; }
-p { padding: 0; margin: 0; }
-.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.clearfix { display: inline-block; }
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-
-a img { border: none; }
 abbr, acronym { border: none; text-underline: none; }
-
+a {
+  color: #AAA;
+  font-weight: 250;
+  text-decoration: none;
+  border-bottom: 2px solid #666;
+}
+a:hover {
+  color: #EEE;
+}
+.geobg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 #hold {
-   margin: 0;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 570px;
-   height: auto;
-   margin-left: -285px;
-   margin-top: -75px;
-   background: url(js-green-rounded.gif) no-repeat 20px center;
-   border: 1px solid transparent;
-}
-#copy {
-   margin-left: 170px;
-   color: #777;
-   text-align: left;
-   padding: 10px 0;
-}
-#hold h1 {
-   color: #777;
-   margin: 0;
-   padding: 0;
-   font-size: 3em;
-   letter-spacing: -2px;
-}
-#hold p {
-   text-align: left;
-   font-size: 1.75em;
-   letter-spacing: -1px;
-   line-height: 1.5em;
-   padding-right: 10px;
-}
-#hold a {
-   color: #777;
-   text-decoration: none;
-}
-#hold a:hover {
-   color: rgb(150,200,60);
-   border-bottom: 2px solid #333;
-   text-decoration: none;
-}
-#hold h1 a, #hold h1 no {
-   border: none !important;
+  background: #000;
+  opacity: 0.65;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 570px;
+  height: auto;
+  margin-left: -285px;
+  margin-top: -100px;
+  border: 1px solid #000;
+  border-radius: 2px;
 }
 #hold:hover {
-  border: 1px solid #222;
+  opacity: 0.85;
 }
-#hold:hover h1 {
-   color: rgb(150,200,60);
+#copy {
+  padding: 20px;
 }
-#hold:hover a {
-   border-bottom: 2px solid #333;
-   text-decoration: none;
+#avatar {
+  background: #FFF url(js_sm.jpg) no-repeat 0 0;
+  background-size: 100px 100px;
+  width: 100px; height: 100px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 0 20px 0 0;
+  opacity: 0.75;
 }
-#hold:hover h1 a {
-   color: rgb(150,200,60);
+#avatar:hover {
+  opacity: 1.0;
 }
-#hold:hover abbr, #hold:hover acronym {
-   border-bottom: 1px dotted #333;
-   cursor: help
+#hold h1 a, #hold h1 no {
+  border: none !important;
+}
+#hold h1 {
+  padding: 5px 10px 5px 0;
+  color: #AAA;
+  text-shadow: 0 0 4px #888;
+  font-size: 3em;
+  font-weight: lighter;
+  letter-spacing: -1px;
+}
+#hold p {
+  padding: 5px 10px 10px 0;
+  color: #AAA;
+  font-size: 1.5em;
+  font-weight: lighter;
+  letter-spacing: 0;
+  line-height: 1.33em;
+}
+#rotate {
+  opacity: 0.5;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-animation: rotate 30s linear infinite;
+  animation: rotate 30s linear infinite;
+  width: 32px;
+  height: 32px;
+  margin: 16px;
+  cursor: pointer;
+  background: url(shuffle.png) no-repeat 0 0;
+}
+@-webkit-keyframes rotate {
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
 }
 #presence {
-   font-family: Calibri, Helvetica, Arial "Trebuchet MS", sans-serif;
-   opacity: 0.4;
-   font-size: 1.1em;
-   width: 20px;
-   overflow: hidden;
-   position: absolute;
-   top: 20px;
-   left: 20px;
-   margin: 0;
-   padding: 0;
-   list-style: none;
-   border-right: 1px solid #3D3F37;
-   border-bottom: 1px solid #3D3F37;
-   border: none;
+  opacity: 0.5;
+  width: 20px;
+  font-size: 1.1em;
+  font-weight: 250;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#presence:hover {
+  opacity: 1.0;
+  width: 100px;
 }
 #presence li {
-   margin: 0;
-   padding: 0 1px 1px 0;
-   list-style: none;
-   background: no-repeat 2px center;
+  margin: 0;
+  padding: 0 1px 1px 0;
+  list-style: none;
+  background: no-repeat 2px center;
 }
 #presence li a {
-   margin: 0;
-   color: #797F6F;
-   display: block;
-   width: auto;
-   text-decoration: none;
-   margin-left: 0;
-   padding: 2px 2px 2px 22px;
-   background: #222 no-repeat 2px center;
-   background: #1E1F1B no-repeat 2px center;
+  display: block;
+  width: auto;
+  padding: 2px 2px 2px 22px;
+  background: rgba(0, 0, 0, 0.75) no-repeat 2px center;
+  border: none;
 }
 #presence li.claimid, #presence li.claimid a { background-image: url(presence/claimid.gif) }
 #presence li.delicious, #presence li.delicious a { background-image: url(presence/delicious.gif) }
@@ -114,5 +130,33 @@ abbr, acronym { border: none; text-underline: none; }
 #presence li.linkedin, #presence li.linkedin a { background-image: url(presence/linkedin.gif) }
 #presence li.reddit, #presence li.reddit a { background-image: url(presence/reddit.gif) }
 #presence li.wikipedia, #presence li.wikipedia a { background-image: url(presence/wikipedia.gif) }
-
-#jHelperTipAttrContainer { background: #000; border: 1px solid #000; color: #96C83C; display: none; }
+.easefast {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.easefast:hover {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.ease {
+  -webkit-transition: all 1.0s ease-out;
+  -moz-transition: all 1.0s ease-out;
+  -o-transition: all 1.0s ease-out;
+  transition: all 1.0s ease-out;
+}
+.ease:hover {
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  transition: all 1.0s ease;
+}
+.easein:hover {
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  transition: all 1.0s ease;
+}
